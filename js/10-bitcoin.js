@@ -1,3 +1,6 @@
+/* __________________________________ XMLHttpRequest __________________________________ */
+
+/* 
 const url = "https://blockchain.info/ticker";
 
 function loadPrice() {
@@ -30,4 +33,52 @@ function loadPrice() {
   };
 }
 
-setInterval(loadPrice, 2000);
+setInterval(loadPrice, 2000); */
+
+
+
+/* __________________________________ Avec Fetch __________________________________ */
+
+/* const url = "https://blockchain.info/ticker";
+
+async function loadPrice(){
+  const requete = await fetch(url, {
+    method: 'GET'
+  });
+
+  if(!requete.ok){
+    console.log("IL Y A EU UN PROBLEME");
+  }else{
+    console.log("CA MARCHE");
+    let data = await requete.json();
+    console.log(data);
+    document.querySelector('#price_label').textContent = data.EUR.last;
+  }
+}
+
+setInterval(loadPrice, 1000);
+ */
+
+
+
+
+/* __________________________________ Avec Axios __________________________________ */
+const url = "https://blockchain.info/ticker";
+
+function loadPrice(){
+  axios.get(url)
+    .then(function(donnees){
+      console.log(donnees);
+      document.querySelector('span').textContent = donnees.data.EUR.last;
+    })
+    .catch(function(erreur){
+      console.log('erreur');
+      console.log(erreur);
+    })
+    // Possibilité de réutiliser un .then pour refaire une action après le call
+    .then(function(){
+      console.log('mise à jour effectuée');
+    });
+}
+
+  setInterval(loadPrice, 1000);
