@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+  <title>Theme mode</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="text-content">
+      <h1 class="title">Bienvenue</h1>
+      <p class="text">Ce site est en construction. Il ne gère que le choix du thème pour le moment.</p>
+    </div>
+
+    <div class="button-mode">
+      <button id="mode">
+        <i class="fas fa-moon"></i>
+        <span>Thème sombre</span>
+      </button>
+    </div>
+  </div>
+
+  <style>
+    html,
+    body {
+      font-family: 'Poppins', sans-serif;
+      min-width: 300px;
+    }
+
+    .container{
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction : column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    button {
+      border: 1px;
+      border-radius: 15px;
+      padding: 15px;
+      cursor: pointer;
+    }
+
+    * {
+      outline: 0;
+    }
+
+    .dark {
+      background-color: #112F41;
+      color: #ffffff;
+    }
+
+    .dark button {
+      background: #144098;
+      color: #fff;
+    }
+
+    .title, .text{
+      text-align: center;
+    }
+
+    .button-mode span{
+      font-size: 16px;
+    }
+  </style>
+</body>
+
+<script src="js/13-theme-mode.js"></script>
+
+</html>
